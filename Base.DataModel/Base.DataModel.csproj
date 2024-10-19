@@ -10,13 +10,11 @@
     <None Remove="Enums\" />
     <None Remove="Context\" />
     <None Remove="Entities\" />
-    <None Remove="Context\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="Context\" />
     <Folder Include="Entities\" />
-    <Folder Include="Context\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />

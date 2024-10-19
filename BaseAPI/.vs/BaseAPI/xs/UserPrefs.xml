@@ -1,9 +1,42 @@
 ﻿<Properties StartupConfiguration="{EAD8DB53-7B56-4EB1-B466-BF144DAFEF70}|https">
-  <MonoDevelop.Ide.ItemProperties.Base.Services FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Base.Core FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Base.BusinessLayers FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Base.Testing FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.BaseAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Base.Services FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Base.DataModel FirstBuild="True" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.Base.Testing FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="../Base.Core/Base/DtoBase.cs" Line="10" Column="1" />
+      <File FileName="../Base.Core/Base/IDtoBase.cs" Line="10" Column="1" />
+      <File FileName="../Base.Core/Base/IEntityBase.cs" Line="11" Column="1" />
+      <File FileName="../Base.Core/Base/EntityBase.cs" Line="11" Column="1" />
+      <File FileName="../Base.DataModel/Context/MainDbContext.cs" Line="34" Column="1" />
+      <File FileName="../Base.DataModel/Context/Extensions/EntityFrameworkExtensions.cs" Line="27" Column="1" />
+      <File FileName="../Base.BusinessLayers/Services/Base/IBaseService.cs" Line="22" Column="30" />
+      <File FileName="../Base.BusinessLayers/Services/Base/BaseService.cs" Line="154" Column="18" />
+      <File FileName="../Base.Core/Classes/OperationResult.cs" Line="13" Column="40" />
+      <File FileName="../Base.Core/Classes/Response.cs" Line="13" Column="1" />
+      <File FileName="../Base.Core/Interfaces/IOperationResult.cs" Line="13" Column="6" />
+      <File FileName="../Base.BusinessLayers/Services/Base/DataCollection.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BaseAPI">
+            <Node name="Base.BusinessLayers">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="Base.Core">
+              <Node name="Classes" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Base.BusinessLayers FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Base.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

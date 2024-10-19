@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QFBFcRJ/tbrqs2P+EnpiL9JYW18cTGpwHGFQn/cJIEZb65hPUVt+yyRJGQ8LuAGSX+UkGOFJGthXj4enQnzU2g==",
+  "dgSpecHash": "J8cY2sq1ac5NZviE2Qc3FjjcJj+JJ5Nihf1fT6J39+d6Y9VjufO8vrAIMvXSotImMUl0Em7qSEViPwKomTHLfA==",
   "success": true,
   "projectFilePath": "/Users/stacybalbi/Projects/API-BASE-.NET-1/Base.Core/Base.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/stacybalbi/.nuget/packages/fluentvalidation/11.10.0/fluentvalidation.11.10.0.nupkg.sha512",
+    "/Users/stacybalbi/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/stacybalbi/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.10.0/fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
+    "/Users/stacybalbi/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

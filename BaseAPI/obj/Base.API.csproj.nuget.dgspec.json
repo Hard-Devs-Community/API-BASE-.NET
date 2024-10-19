@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/BaseAPI.csproj": {}
+    "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/Base.API.csproj": {}
   },
   "projects": {
     "/Users/stacybalbi/Projects/API-BASE-.NET-1/Base.BusinessLayers/Base.BusinessLayers.csproj": {
@@ -200,12 +200,12 @@
         }
       }
     },
-    "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/BaseAPI.csproj": {
+    "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/Base.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/BaseAPI.csproj",
-        "projectName": "BaseAPI",
-        "projectPath": "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/BaseAPI.csproj",
+        "projectUniqueName": "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/Base.API.csproj",
+        "projectName": "Base.API",
+        "projectPath": "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/Base.API.csproj",
         "packagesPath": "/Users/stacybalbi/.nuget/packages/",
         "outputPath": "/Users/stacybalbi/Projects/API-BASE-.NET-1/BaseAPI/obj/",
         "projectStyle": "PackageReference",

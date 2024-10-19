@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "+cWCxdLxeRIw6Kpcu8X3r/VUcGfqxdOuv/ar2mLwx4REEuDktbZAvV1wZ+y0/koyY3AOg4QXeoDYmY3bT09Lhw==",
-  "success": true,
+  "dgSpecHash": "B7aVXz/d6+Y0Txmd37DwKQE9THECWaPM65vuX3YNpANXw49Z5bSZKmWYAa9mh7sfiW11mauW11JkvgcyNYc5EA==",
+  "success": false,
   "projectFilePath": "/Users/stacybalbi/Projects/API-BASE-.NET-1/Base.BusinessLayers/Base.BusinessLayers.csproj",
   "expectedPackageFiles": [
     "/Users/stacybalbi/.nuget/packages/automapper/13.0.0/automapper.13.0.0.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/automapper.collection/10.0.0/automapper.collection.10.0.0.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
+    "/Users/stacybalbi/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/stacybalbi/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.10.0/fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/microsoft.entityframeworkcore/8.0.8/microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.8/microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",
@@ -20,5 +22,15 @@
     "/Users/stacybalbi/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/Users/stacybalbi/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Degradación del paquete detectada: FluentValidation de 11.10.0 a 11.9.2. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \n Base.BusinessLayers -> Base.Core -> FluentValidation.DependencyInjectionExtensions 11.10.0 -> FluentValidation (>= 11.10.0) \n Base.BusinessLayers -> FluentValidation (>= 11.9.2)",
+      "libraryId": "FluentValidation",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

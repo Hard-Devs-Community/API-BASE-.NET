@@ -7,13 +7,14 @@ using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 using System.Net;
 using FluentValidation;
-using Base.Core.Classes;
+
+using Base.DataModel.Context.Extensions;
 
 namespace Base.BusinessLayers.Services.Base
 {
     public class BaseService<TModel> :
-         IBaseService<TModel>
-         where TModel : class, IEntityBase, new()
+        IBaseService<TModel>
+        where TModel : class, IEntityBase, new()
     {
 
         private readonly DbSet<TModel> _dbSet;
@@ -144,22 +145,14 @@ namespace Base.BusinessLayers.Services.Base
 
         public virtual async Task<OperationResult> Add(TModel entity)
         {
-            try
+            var results = _validator.Validate(entity);
+            if (results.IsValid)
             {
-                var results = _validator.Validate(entity);
-                if (results.IsValid)
-                {
-                    var entry = await _dbSet.AddAsync(entity);
-                    return new OperationResult() { Success = true, StatusCode = HttpStatusCode.Created };
-                }
-                var errosMsg = results.Errors.ToMessage();
-                return new OperationResult() { StatusCode = HttpStatusCode.BadRequest, Message = errosMsg };
+                var entry = await _dbSet.AddAsync(entity);
+                return new OperationResult() { Success = true, StatusCode = HttpStatusCode.Created };
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            var errosMsg = results.Errors.ToMessage();
+            return new OperationResult() { StatusCode = HttpStatusCode.BadRequest, Message = errosMsg };
         }
 
         public virtual IEnumerable<OperationResult> AddRange(IEnumerable<TModel> entityEnumerable)
@@ -210,7 +203,7 @@ namespace Base.BusinessLayers.Services.Base
         public virtual OperationResult Remove(TModel entity)
         {
             EntityEntry dbEntityEntry = _context.Entry(entity);
-            entity.Borrado = true;
+            entity.Deleted = true;
             dbEntityEntry.State = EntityState.Modified;
             return new OperationResult() { StatusCode = HttpStatusCode.OK, Success = true };
         }
@@ -280,7 +273,7 @@ namespace Base.BusinessLayers.Services.Base
             try
             {
                 await _context.SaveChangesAsync();
-                return new OperationResult() { Success = true, StatusCode = HttpStatusCode.NoContent };
+                return new OperationResult() { Success = true, StatusCode = HttpStatusCode.InternalServerError };
             }
             catch (DbUpdateException ex)
             {
@@ -290,72 +283,6 @@ namespace Base.BusinessLayers.Services.Base
                 //"Try again, and if the problem persists, " +
                 // "see your system administrator.");
             }
-        }
-
-        public virtual async Task<DataCollection<TModel>> GetPagedAsync(
-            int page,
-            int take,
-            Func<IQueryable<TModel>, IOrderedQueryable<TModel>> orderBy,
-            Expression<Func<TModel, bool>> predicate = null,
-            Func<IQueryable<TModel>, IIncludableQueryable<TModel, object>> include = null
-        )
-        {
-            var query = _context.Set<TModel>().AsQueryable();
-            var originalPages = page;
-
-            page--;
-
-            if (page > 0)
-                page = page * take;
-
-            query = PrepareQuery(query, predicate, include, orderBy);
-
-            var result = new DataCollection<TModel>
-            {
-                Items = await query.Skip(page).Take(take).ToListAsync(),
-                Total = await query.CountAsync(),
-                Page = originalPages
-            };
-
-            if (result.Total > 0)
-            {
-                result.Pages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(result.Total) / take));
-            }
-
-            return result;
-        }
-
-        public virtual DataCollection<TModel> GetPaged(
-            int page,
-            int take,
-            Func<IQueryable<TModel>, IOrderedQueryable<TModel>> orderBy,
-            Expression<Func<TModel, bool>> predicate = null,
-            Func<IQueryable<TModel>, IIncludableQueryable<TModel, object>> include = null
-        )
-        {
-            var query = _context.Set<TModel>().AsQueryable();
-            var originalPages = page;
-
-            page--;
-
-            if (page > 0)
-                page = page * take;
-
-            query = PrepareQuery(query, predicate, include, orderBy);
-
-            var result = new DataCollection<TModel>
-            {
-                Items = query.Skip(page).Take(take).ToList(),
-                Total = query.Count(),
-                Page = originalPages
-            };
-
-            if (result.Total > 0)
-            {
-                result.Pages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(result.Total) / take));
-            }
-
-            return result;
         }
 
         public virtual async Task<decimal?> SumAsync(

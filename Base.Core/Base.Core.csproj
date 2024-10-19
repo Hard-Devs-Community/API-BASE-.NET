@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <None Remove="Base\" />
-    <None Remove="Classes\" />
     <None Remove="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base\" />
-    <Folder Include="Classes\" />
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
   </ItemGroup>
 </Project>

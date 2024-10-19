@@ -12,6 +12,9 @@
     <None Remove="Mappers\" />
     <None Remove="Services\" />
     <None Remove="Services\Base\" />
+    <None Remove="Interfaces\Base\" />
+    <None Remove="Validators\" />
+    <None Remove="Validators\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dtos\" />
@@ -19,6 +22,9 @@
     <Folder Include="Mappers\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Base\" />
+    <Folder Include="Interfaces\Base\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Validators\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base.Core\Base.Core.csproj" />

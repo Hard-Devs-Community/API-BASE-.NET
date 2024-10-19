@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseAPI", "BaseAPI.csproj", "{EAD8DB53-7B56-4EB1-B466-BF144DAFEF70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.API", "Base.API.csproj", "{EAD8DB53-7B56-4EB1-B466-BF144DAFEF70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.BusinessLayers", "..\Base.BusinessLayers\Base.BusinessLayers.csproj", "{951B6C3C-02E7-4B21-AB88-E262299B11D2}"
 EndProject
